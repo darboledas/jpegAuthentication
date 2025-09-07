@@ -87,12 +87,12 @@ JSON (UTF‑8) wrapped in the COM segment. Example:
 
 **Seal a JPEG**
 ```bash
-python tools/seal_jpeg.py   --in input.jpg   --out sealed.jpg   --imei 356789101234567   --privkey keys/private.pem   --hash sha256   --sig-alg rsa-pss
+python tools/sign_jpeg.py <image.jpg> <IMEI> <private_key.pem> <output.jpg>
 ```
 
 **Verify a sealed JPEG**
 ```bash
-python tools/verify_jpeg.py   --in sealed.jpg   --pubkey keys/public.pem
+python tools/verify_jpeg_signature.py <image.jpg> <public_key.pem>
 ```
 
 **Extract IMEI via ADB (forensic workstation)**
